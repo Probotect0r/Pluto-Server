@@ -1,5 +1,6 @@
 {
   "globalDependencies": {
-    "node": "registry:dt/node#6.0.0+20161110151007"
+    "node": "registry:dt/node#6.0.0+20161110151007",
+    "shortid": "registry:dt/shortid#0.0.0+20160316155526"
   }
 }

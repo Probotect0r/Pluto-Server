@@ -26,3 +26,5 @@ _testmain.go
 # NodeJs files
 node_modules/
 dist/
+StreamingServer/videos
+video.mp4

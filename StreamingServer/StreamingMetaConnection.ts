@@ -53,8 +53,8 @@ export class StreamingMetaConnection extends Connection{
                 this.socket.write(JSON.stringify(sendMessage))
                 break
             case "request_streaming_connection":
-                console.log("Streaming connection requested:", message.file, message.start, message.end)
-                this.streamConns.push(new StreamingConnection(message.file, message.start, message.end || undefined)) 
+                console.log("Streaming connection requested:", message.file, message.start, message.end, message.reqID)
+                this.streamConns.push(new StreamingConnection(message.file, message.start, message.end || undefined, message.reqID)) 
                 break
         }
     }
@@ -65,11 +65,13 @@ export class StreamingConnection extends Connection {
     protected file: string
     protected start: number 
     protected end: number
+    protected reqID: string
 
-    constructor(file: string, start: number, end: number){
+    constructor(file: string, start: number, end: number, reqID: string){
         super(8091)
         this.file = file
         this.start = start
+        this.reqID = reqID
 
         // Determine the end
         if(end){
@@ -94,8 +96,10 @@ export class StreamingConnection extends Connection {
                     type: "stream_init_message",
                     name: this.name,
                     start: this.start,
-                    end: this.end
+                    end: this.end,
+                    reqID: this.reqID
                 }
+
                 this.socket.write(JSON.stringify(message))
                 break
 

@@ -1,0 +1,24 @@
+{
+  "name": "pluto-server",
+  "version": "1.0.0",
+  "description": "Media streaming server that works over the internet without port forwarding.",
+  "main": "index.js",
+  "dependencies": {
+    "shortid": "^2.2.6",
+    "websocket-stream": "^3.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Probotect0r/Pluto-Server.git"
+  },
+  "author": "Sagar Desai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Probotect0r/Pluto-Server/issues"
+  },
+  "homepage": "https://github.com/Probotect0r/Pluto-Server#readme"
+}
